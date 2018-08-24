@@ -7,7 +7,9 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
+    "flow-bin": "^0.79.1",
     "mongoose": "2.4.2",
+    "socketio": "^1.0.0",
     "underscore": "^1.9.1"
   },
   "description": "learn nigga"

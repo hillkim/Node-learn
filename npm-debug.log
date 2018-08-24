@@ -1,0 +1,35 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'view', 'mongoose' ]
+2 info using npm@1.4.21
+3 info using node@v8.11.2
+4 verbose request where is /mongoose
+5 verbose request registry https://registry.npmjs.org/
+6 verbose request id ee9f7e46da47f47d
+7 verbose url raw /mongoose
+8 verbose url resolving [ 'https://registry.npmjs.org/', './mongoose' ]
+9 verbose url resolved https://registry.npmjs.org/mongoose
+10 verbose request where is https://registry.npmjs.org/mongoose
+11 info trying registry request attempt 1 at 8:53:03 PM
+12 http GET https://registry.npmjs.org/mongoose
+13 info retry will retry, error on last attempt: Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+14 info trying registry request attempt 2 at 8:53:13 PM
+15 http GET https://registry.npmjs.org/mongoose
+16 info retry will retry, error on last attempt: Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+17 info trying registry request attempt 3 at 8:54:13 PM
+18 http GET https://registry.npmjs.org/mongoose
+19 error Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+19 error     at Object._errnoException (util.js:992:11)
+19 error     at errnoException (dns.js:55:15)
+19 error     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:92:26)
+20 error If you need help, you may report this *entire* log,
+20 error including the npm and node versions, at:
+20 error     <http://github.com/npm/npm/issues>
+21 error System Linux 4.17.0-parrot8-amd64
+22 error command "/usr/bin/node" "/usr/bin/npm" "view" "mongoose"
+23 error cwd /home/artmone/Videos/tuts/courses(udemy)/Node.js The Complete Guide to Build RESTful APIs (2018)/work/untitled folder
+24 error node -v v8.11.2
+25 error npm -v 1.4.21
+26 error syscall getaddrinfo
+27 error code EAI_AGAIN
+28 error errno EAI_AGAIN
+29 verbose exit [ 1, true ]

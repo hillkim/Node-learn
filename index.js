@@ -1,57 +1,60 @@
-//checking what i can remember
-/* const http = require('http');
+const express =require('express');
+const app = express();
 
-const server=http.createServer((req,res) => {
-if(red.url === '/'){
-  res.write('Hello man');
-  res.end;
+app.use(express.json());//middleware
 
+//using express
+app.get('/',(req,res) =>{
+res.send('Welcome to This Filthy Site bruh');
+
+
+});
+//things
+app.get('/api/things', (req, res) => {
+    res.send({'Things to do':{1:'eat',2:'live',3:'pray',4:'worship'}});
+
+});
+//getting specific thing
+app.get('/api/things/:year/:month',(req,res) => {
+  //res.send(req.params);
+  //
+   res.send(req.query);
+});
+
+//things list
+const things=[
+    { id: 1, name: "Drinking" },
+    { id: 2, name: "Walking" },
+    { id: 3, name: "Eating" },
+    { id: 4, name: "Playing" },
+    { id: 5, name: "Praying" },
+    { id: 6, name: "Reading" },
+    { id: 7, name: "Sleeping" },
+];
+
+//fetching a thing
+app.get('/api/things/:id',(req,res) => {
+let thing = things.find(c => c.id === parseInt(req.params.id));
+if (!thing){ res.status(404).send('You cant do anything yet');
 }
-if(res.url === 'api/man'){
-
-    res.write('hello the other man');
-    res.end();
-}
-
-
-});
- */
-
-
- //using express
-
- const express = require('express');
- const app = express();
- 
-app.use(express.json());//sets a req.body
-app.use(express.static('files'));
-app.use(express.urlencoded({extended : true}));
-
- //some working values
-
- const men =[
-     {id:1,name :'Man'},
-     { id: 2, name: 'WoMan' },
-     { id: 1, name: 'ChilMan' },
- ];
- 
- app.get('/',(req, res) => {
-    res.send('hello crack');
- });
-
-app.get('/api/man', (req, res) => {
-    res.send(men);
+res.send(thing);
 });
 
-app.post('/api/men',(req,res) =>{
- const man ={
-     id: man.lenth +1,
-     name: req.body.name,
- }
+//posting a thing
+app.post('/api/things',(req,res) => {
+const thing={
+   id:things.length+1,
+   name:req.body.name
+};
+things.push(thing);
+res.send(thing);
+});s
 
- men.push(man); 
- res.send(man);
+//getting the set port in env
+
+const port =process.env.PORT || 3000;
+
+app.listen(port,()=>{ 
+    console.log('Am just listening to port '+port +' .../n please let me know if you would like me to listen to another one.......//#endregion')
+
 });
-const port=process.env.PORT || 3000;
-
-app.listen(port,() => console.log('Man nangoja '+ port +' io kitu'));
