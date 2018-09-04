@@ -23,6 +23,7 @@ if(res.url === 'api/man'){
  const express = require('express');
  const app = express();
  
+ //middlewares
 app.use(express.json());//sets a req.body
 app.use(express.static('files'));
 app.use(express.urlencoded({extended : true}));
